@@ -1,0 +1,24 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class TransferMap : MonoBehaviour
+{
+    public string transferMap;
+    private MovingObject player;
+
+    void Start()
+    {
+        player = FindObjectOfType<MovingObject>();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "Player")
+        {
+            player.MapName = transferMap;
+            SceneManager.LoadScene(transferMap);
+        }
+    }
+}
