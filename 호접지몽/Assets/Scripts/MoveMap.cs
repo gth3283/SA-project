@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class MoveMap : MonoBehaviour
 {
-    public GameObject movemap;
+    public GameObject CamMove;
+    public Transform target;
     private CameraManager Cam;
+    private FadeManager Fade;
+    private MovingObject player;
 
     // Start is called before the first frame update
     void Start()
     {
+        Fade = FindObjectOfType <FadeManager>();
         Cam = FindObjectOfType<CameraManager>();
+        player = FindObjectOfType<MovingObject>();
     }
 
     // Update is called once per frame
@@ -18,7 +23,17 @@ public class MoveMap : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            Cam.target = movemap;
+            StartCoroutine(FadeCoroutine());
         }
+    }
+
+    IEnumerator FadeCoroutine()
+    {
+        Fade.FadeOut();
+        yield return new WaitForSeconds(1f);
+        Cam.target = CamMove;
+        player.transform.position = target.transform.position;
+        yield return new WaitForSeconds(1f);
+        Fade.FadeIn();
     }
 }
