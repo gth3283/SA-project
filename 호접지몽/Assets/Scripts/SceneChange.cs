@@ -21,13 +21,8 @@ public class SceneChange : MonoBehaviour
 
     void Start()
     {
-        if (instance != null) { //같은 객체가 있으면 Destroy
-            DestroyImmediate(this.gameObject);
-            return;
-        }
         instance = this;
         Fade = FindObjectOfType<FadeManager>();
-        DontDestroyOnLoad(gameObject);
     }
     public void ChangeScene(string sceneName) //씬 전환
     {
@@ -76,7 +71,7 @@ public class SceneChange : MonoBehaviour
         }
         Loading.SetActive(false); //로딩창 끄기
         color = Fade.black.color;
-        color.a = 1f;
+        color.a = 0f;
         Fade.black.color = color;
         Fade.FadeIn();
     }

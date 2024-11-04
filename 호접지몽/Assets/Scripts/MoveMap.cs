@@ -13,7 +13,8 @@ public class MoveMap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Fade = FindObjectOfType <FadeManager>();
+        Fade = FindObjectOfType<FadeManager>();
+        Fade.FadeIn(0.001f);
         Cam = FindObjectOfType<CameraManager>();
         player = FindObjectOfType<MovingObject>();
     }
