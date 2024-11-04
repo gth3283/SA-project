@@ -71,7 +71,7 @@ public class SceneChange : MonoBehaviour
         }
         Loading.SetActive(false); //·ÎµùÃ¢ ²ô±â
         color = Fade.black.color;
-        color.a = 0f;
+        color.a = 1f;
         Fade.black.color = color;
         Fade.FadeIn();
     }
