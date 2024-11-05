@@ -70,10 +70,6 @@ public class SceneChange : MonoBehaviour
             LoadingText.text = percentage.ToString("0") + "%"; //퍼센트 표기
         }
         Loading.SetActive(false); //로딩창 끄기
-        color = Fade.black.color;
-        color.a = 1f;
-        Fade.black.color = color;
-        Fade.FadeIn();
     }
 
 }
