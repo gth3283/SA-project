@@ -14,7 +14,7 @@ public class OpenOptionWindow : MonoBehaviour
     {
         a.alpha = 0;
         b.alpha = 1;
-        Title.
+        //Title.
 
     }
 
