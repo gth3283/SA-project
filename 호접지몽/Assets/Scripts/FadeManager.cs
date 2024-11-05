@@ -11,7 +11,7 @@ public class FadeManager : MonoBehaviour
 
     public void FadeOut(float _speed = 0.02f)
     {
-        StartCoroutine(FadeOutCoroutine(_speed));   
+        StartCoroutine(FadeOutCoroutine(_speed)); 
     }
     IEnumerator FadeOutCoroutine(float _speed)
     {

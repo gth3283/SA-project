@@ -10,6 +10,7 @@ public class SceneChange : MonoBehaviour
 {
     private FadeManager Fade;
     public GameObject Loading;
+    public CanvasGroup c;
     public Text LoadingText;
     private Color color;
 
@@ -26,6 +27,7 @@ public class SceneChange : MonoBehaviour
     }
     public void ChangeScene(string sceneName) //씬 전환
     {
+        c.alpha = 0f;
         StartCoroutine(FICoroutine());
         StartCoroutine(LoadScene(sceneName)); //로딩 시작
     }
