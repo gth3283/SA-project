@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class MovingObject : MonoBehaviour
 {
+    public string cName;
     static public MovingObject instance;
 
     public string MapName;//플레이어 위치 맵 저장
@@ -24,6 +25,8 @@ public class MovingObject : MonoBehaviour
 
     private bool Move = true;
 
+    private Animator ani;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +34,7 @@ public class MovingObject : MonoBehaviour
         {
             DontDestroyOnLoad(this.gameObject);
             BoxCollider = GetComponent<BoxCollider2D>();
+            ani = GetComponent<Animator>();
             instance = this;
         }
         else if(instance != null)
@@ -42,6 +46,7 @@ public class MovingObject : MonoBehaviour
     {
         while (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
         {
+
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 applyRun = Running;
@@ -54,7 +59,15 @@ public class MovingObject : MonoBehaviour
             }
 
             vector.Set(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0);//�Է¹ޱ�
-
+            
+            if(vector.x != 0)
+            {
+                vector.y = 0;
+            }
+            
+            ani.SetFloat("DirX", vector.x);
+            ani.SetFloat("DirY", vector.y);
+            ani.SetBool("Walking", true);
             Vector2 start = transform.position;
             Vector2 end = start + new Vector2(vector.x * speed * TileCount, vector.y * speed * TileCount);
 
@@ -66,6 +79,7 @@ public class MovingObject : MonoBehaviour
             {
                 break;
             }
+
 
             while (CountBreaker < TileCount)
             {
@@ -89,7 +103,8 @@ public class MovingObject : MonoBehaviour
 
             CountBreaker = 0;
            
-        } 
+        }
+        ani.SetBool("Walking", false);
         Move = true;
     }
 
