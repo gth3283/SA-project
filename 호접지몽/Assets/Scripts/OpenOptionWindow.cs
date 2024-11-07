@@ -8,19 +8,14 @@ public class OpenOptionWindow : MonoBehaviour
 
     public CanvasGroup a;
     public CanvasGroup b;
-    public GameObject Title;
-    // Start is called before the first frame update
-    void Start()
+    public SpriteRenderer title;
+
+    public void OnOptionButtonClick()
     {
         a.alpha = 0;
+        a.interactable = false;
         b.alpha = 1;
-        //Title.
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        b.interactable = true;
+        title.color = new Color(30 / 255f, 30 / 255f, 30 / 255f);
     }
 }
