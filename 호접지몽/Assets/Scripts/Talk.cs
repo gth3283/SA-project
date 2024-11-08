@@ -5,7 +5,9 @@ using UnityEngine;
 [System.Serializable]
 public class Talk
 {
+    [TextArea(1,2)]
     public string[] sentences;
+    public string[] name;
     public Sprite[] sprites;
     public Sprite[] windows;
 }
