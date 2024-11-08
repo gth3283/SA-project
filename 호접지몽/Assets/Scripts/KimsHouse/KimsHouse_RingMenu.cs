@@ -11,11 +11,13 @@ public class KimsHouse_RingMenu : MonoBehaviour
     //천칭 왼쪽 무게합 선언
     //천칭 오른쪽 무게합 선언
     //각 반지의 무게 배열 선언
+    //각 반지의 선택되었는지 여부 판정할 boolean 배열 선언
     
     public void OnClickLeftButton()
     {
         //왼쪽 무게합에 선택한 반지의 무게 더하기
         //반지 이미지 색조 붉은계열로 변경
+        //선택한 반지 선택 여부 true
     }
 
 
@@ -23,14 +25,9 @@ public class KimsHouse_RingMenu : MonoBehaviour
     {
         //오른쪽 무게합에 선택한 반지의 무게 더하기
         //반지 이미지 색조 푸른계열로 변경
+        //선택한 반지 선택 여부 true
     }
 
-
-    public void OnClickCloseButton()
-    {
-
-
-    }
 
 
     void Start()
