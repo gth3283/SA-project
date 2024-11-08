@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.U2D;
 using UnityEngine.UI;
@@ -43,7 +44,7 @@ public class TalkManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        count = 0;
+        count = -1;
         text.text = "";
         Name.text = "";
         Sentences = new List<string>();
@@ -56,12 +57,16 @@ public class TalkManager : MonoBehaviour
     {
         talking = true;
 
-        for(int i=0;i<t.sentences.Length;i++)
+        if (Sentences.Count == 0)
         {
-            Names.Add(t.name[i]);
-            Sentences.Add(t.sentences[i]);
-            sprites.Add(t.sprites[i]);
-            windows.Add(t.windows[i]);
+            for (int i = 0; i < t.sentences.Length; i++)
+            {
+                Names.Add(t.name[i]);
+                Sentences.Add(t.sentences[i]);
+                sprites.Add(t.sprites[i]);
+                windows.Add(t.windows[i]);
+            }
+            Debug.Log(Names.Count);
         }
         animWindow.SetBool("Appear", true);
         StartCoroutine(TalkingCoroutine());
@@ -69,7 +74,7 @@ public class TalkManager : MonoBehaviour
 
     public void ExitTalk()
     {
-        count = 0;
+        count = -1;
         text.text = "";
         Name.text = "";
         Names.Clear();
@@ -84,15 +89,22 @@ public class TalkManager : MonoBehaviour
 
     IEnumerator TalkingCoroutine()
     {
+        if (Sentences[count] == "")
+        {
+            count++;
+        }
+
         Name.text += Names[count];
+
         if (Name.text == "»êµ¿¾Æ")
         {
             animSprite.SetBool("Appear", true);
         }
-        else
+        else if(Name.text=="ÃÌÀå")
         {
             animNPC.SetBool("Appear", true);
         }
+
         if (count > 0)
         {
             if (windows[count] != windows[count - 1])
@@ -126,7 +138,7 @@ public class TalkManager : MonoBehaviour
             sprite.GetComponent<SpriteRenderer>().sprite = sprites[count];
         }
 
-        for(int i = 0; i < Sentences[count].Length;i++)
+        for(int i = 0; i < Sentences[count].Length; i++)
         {
             text.text += Sentences[count][i];
             yield return new WaitForSeconds(0.01f);
