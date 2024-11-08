@@ -27,6 +27,8 @@ public class MovingObject : MonoBehaviour
 
     private Animator ani;
 
+    private NPCCollision NPCCollision;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +37,7 @@ public class MovingObject : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
             BoxCollider = GetComponent<BoxCollider2D>();
             ani = GetComponent<Animator>();
+            NPCCollision = GetComponent<NPCCollision>();
             instance = this;
         }
         else if(instance != null)
