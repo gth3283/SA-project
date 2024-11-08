@@ -34,12 +34,13 @@ public class NPCMoving : MonoBehaviour
     public float baseSpeed = 1f; // 기본 이동 속도, 기본값 설정
     private Vector3 vector; // x, y, z 축 추가
 
-    public bool Move = true;
+    private bool Move = true;
     public NPCMove npcMoveData; // NPCMove 데이터 참조
 
     private Animator ani;
 
     private NPCCollision NPCCollision;
+    private bool RayCastHit = false;
 
     void Start()
     {
@@ -70,7 +71,7 @@ public class NPCMoving : MonoBehaviour
 
         while (npcMoveData.NPCmove)
         {
-            while (NPCCollision.isCollision) //충돌 상태라면 대기
+            while (NPCCollision.isCollision || RayCastHit) //충돌 상태라면 대기
             {
                 yield return new WaitForSeconds(0.5f);
             }
@@ -80,8 +81,23 @@ public class NPCMoving : MonoBehaviour
 
             // 방향에 대한 칸 수 설정
             int tileCount = npcMoveData.tileCounts.Length > dirIndex ? npcMoveData.tileCounts[dirIndex] : 1; // 기본값 1
-            NPCMove(npcMoveData.direction[dirIndex], tileCount);
-            dirIndex++;
+
+            Vector2 start = transform.position;
+            Vector2 end = start + new Vector2(vector.x * baseSpeed * tileCount, vector.y * baseSpeed * tileCount);
+
+            BoxCollider.enabled = false;
+            RaycastHit2D hit = Physics2D.Raycast(start, end);
+            BoxCollider.enabled = true;
+            Debug.DrawRay(start, end);
+
+            if (!hit)
+            {
+                RayCastHit = false;
+                NPCMove(npcMoveData.direction[dirIndex], tileCount);
+                dirIndex++;
+            }
+            else
+                RayCastHit = true;
 
             // 속도에 맞춰 대기
             yield return new WaitForSeconds(1f / npcMoveData.frequency);

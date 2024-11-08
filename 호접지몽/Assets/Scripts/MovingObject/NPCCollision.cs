@@ -10,13 +10,17 @@ public class NPCCollision : MonoBehaviour
     private bool isPlayer = false;
     private MovingObject player;
     private float OriginSpeed;
-    private int collisionPoint; //Ãæµ¹ ÁöÁ¡ÀÌ ¾îµðÀÎÁö
+    private int collisionPoint; //ï¿½æµ¹ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    private Animator ani;
+    private Quaternion targetRotation;
 
     private void Start()
     {
         if (target.GetComponent<MovingObject>() != null) {
             isPlayer = true;
             player = target.GetComponent<MovingObject>();
+            ani = target.GetComponent<Animator>();
+            ani.SetBool("isCollision", false);
             OriginSpeed = player.speed;
         }
     }
@@ -25,30 +29,12 @@ public class NPCCollision : MonoBehaviour
     {
         isCollision = true;
         if (isPlayer) {
-            Quaternion targetRotation = Quaternion.LookRotation(collision.transform.position - this.transform.position, this.transform.up);
-
-            if (targetRotation.x > 0)
-            {
-                collisionPoint = 0; //¿À¸¥ÂÊ Ãæµ¹
-                Debug.Log("¿À¸¥ÂÊ Ãæµ¹");
-                Debug.Log(targetRotation.x);
-                Debug.Log(targetRotation.y);
-            }
-            else if (targetRotation.x < 0)
-            {
-                collisionPoint = 1; //¿ÞÂÊ
-                Debug.Log("¿ÞÂÊ Ãæµ¹");
-                Debug.Log(targetRotation.x);
-                Debug.Log(targetRotation.y);
-            }
-            else if (targetRotation.y > 0)
-                collisionPoint = 2; //À§
-            else if (targetRotation.y < 0)
-                collisionPoint = 3; //¾Æ·¡
+            ani.SetBool("isCollision", true);
+            targetRotation = Quaternion.LookRotation(collision.transform.position - this.transform.position, this.transform.up);
         }
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    /*private void OnCollisionStay2D(Collision2D collision)
     {
         if(isPlayer)
             StartCoroutine(playerStopCoroutine());
@@ -56,10 +42,34 @@ public class NPCCollision : MonoBehaviour
 
     IEnumerator playerStopCoroutine()
     {
-        player.speed = 0f;
-        yield return new WaitForSeconds(0.1f);
-        player.speed = OriginSpeed;
-        yield return new WaitForSeconds(0.1f);
+        /*
+        if(targetRotation.x > 0) {
+            if (Input.GetAxisRaw("Horizontal") > 0)
+                player.speed = 0f;
+            else
+                player.speed = OriginSpeed;
+        }
+        else
+        {
+            if (Input.GetAxisRaw("Horizontal") < 0)
+                player.speed = 0f;
+            else
+                player.speed = OriginSpeed;
+        }
+        if (targetRotation.y > 0)
+        {
+            if (Input.GetAxisRaw("Vertical") > 0)
+                player.speed = 0f;
+            else
+                player.speed = OriginSpeed;
+        }
+        else
+        {
+            if (Input.GetAxisRaw("Vertical") < 0)
+                player.speed = 0f;
+            else
+                player.speed = OriginSpeed;
+        }
         switch (collisionPoint) {
             case 0:
                 if (Input.GetAxisRaw("Horizontal") > 0)
@@ -87,11 +97,13 @@ public class NPCCollision : MonoBehaviour
                 break;
         }
         yield return new WaitForSeconds(0.1f);
-    }
+    }*/
 
-    private void OnCollisionExit2D(Collision2D collision) //Ãæµ¹ »óÅÂ¿¡¼­ ºüÁ®³ª°¥ ¶§ È£Ãâ
+    private void OnCollisionExit2D(Collision2D collision) //ï¿½æµ¹ ï¿½ï¿½ï¿½Â¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ È£ï¿½ï¿½
     {
         isCollision = false;
+        if(isPlayer)
+            ani.SetBool("isCollision", false);
     }
 
 }

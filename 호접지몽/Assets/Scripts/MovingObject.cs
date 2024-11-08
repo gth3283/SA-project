@@ -61,7 +61,7 @@ public class MovingObject : MonoBehaviour
                 runFlag = false;
             }
 
-            vector.Set(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0);//�Է¹ޱ�
+            vector.Set(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0);
             
             if(vector.x != 0)
             {
@@ -73,16 +73,22 @@ public class MovingObject : MonoBehaviour
             ani.SetBool("Walking", true);
             Vector2 start = transform.position;
             Vector2 end = start + new Vector2(vector.x * speed * TileCount, vector.y * speed * TileCount);
+            Debug.Log("start"+start);
+            Debug.Log("end"+end);
 
             BoxCollider.enabled = false;
-            RaycastHit2D hit = Physics2D.Linecast(start, end, LayerMask);
+            RaycastHit2D hit = Physics2D.Raycast(start, end, LayerMask);
+            RaycastHit2D NPC_hit = Physics2D.Raycast(start, end);
             BoxCollider.enabled = true;
+            Debug.DrawRay(start, new Vector2(vector.x * speed * TileCount, vector.y * speed * TileCount));
 
-            if (hit.transform != null)
+            if (hit)
             {
+                Debug.Log("hit");
                 break;
             }
 
+            BoxCollider.offset = new Vector2(vector.x * 0.02f * speed * TileCount, vector.y * 0.02f * speed * TileCount);
 
             while (CountBreaker < TileCount)
             {
@@ -101,6 +107,8 @@ public class MovingObject : MonoBehaviour
                 }
 
                 CountBreaker++;
+                if(CountBreaker == 12)
+                    BoxCollider.offset = Vector2.zero;
                 yield return new WaitForSeconds(0.01f);
             }
 
