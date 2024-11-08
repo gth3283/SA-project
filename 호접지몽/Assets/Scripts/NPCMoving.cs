@@ -34,10 +34,12 @@ public class NPCMoving : MonoBehaviour
     public float baseSpeed = 1f; // 기본 이동 속도, 기본값 설정
     private Vector3 vector; // x, y, z 축 추가
 
-    private bool Move = true;
+    public bool Move = true;
     public NPCMove npcMoveData; // NPCMove 데이터 참조
 
     private Animator ani;
+
+    private NPCCollision NPCCollision;
 
     void Start()
     {
@@ -46,6 +48,7 @@ public class NPCMoving : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
             BoxCollider = GetComponent<BoxCollider2D>();
             ani = GetComponent<Animator>();
+            NPCCollision = GetComponent<NPCCollision>();
             instance = this;
         }
         else if (instance != null)
@@ -67,6 +70,10 @@ public class NPCMoving : MonoBehaviour
 
         while (npcMoveData.NPCmove)
         {
+            while (NPCCollision.isCollision) //충돌 상태라면 대기
+            {
+                yield return new WaitForSeconds(0.5f);
+            }
             // 방향 순환
             if (dirIndex >= npcMoveData.direction.Length)
                 dirIndex = 0;

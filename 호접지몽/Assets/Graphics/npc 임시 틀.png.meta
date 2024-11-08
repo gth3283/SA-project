@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,7 +108,259 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: "npc \uC784\uC2DC \uD2C0_0"
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 995
+        width: 130
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0646a37722e4a8645a724961bf8062f9
+      internalID: 1416303880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "npc \uC784\uC2DC \uD2C0_1"
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 995
+        width: 130
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c509b679ab876b54fa488ac17391822f
+      internalID: -1414197430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "npc \uC784\uC2DC \uD2C0_2"
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 995
+        width: 130
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b71122c9b87c78b44b645bf8ad3f3c24
+      internalID: -614467318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "npc \uC784\uC2DC \uD2C0_3"
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 685
+        width: 130
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8093e01fda8c2c04ea109d8b15cd7bba
+      internalID: -1212993614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "npc \uC784\uC2DC \uD2C0_4"
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 685
+        width: 130
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3db9c398240009c419287d8692f57ae7
+      internalID: 813717321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "npc \uC784\uC2DC \uD2C0_5"
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 685
+        width: 130
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2ceda69e969b7c4fb18083038575adb
+      internalID: 1176522152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "npc \uC784\uC2DC \uD2C0_6"
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 365
+        width: 130
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 865fb5b43f9d26a44a3165b2cf4e5ae1
+      internalID: 341045475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "npc \uC784\uC2DC \uD2C0_7"
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 365
+        width: 130
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d094c4982ccba5948949a71900b9b68a
+      internalID: 1577627403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "npc \uC784\uC2DC \uD2C0_8"
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 365
+        width: 130
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e75fb4abbbe85b04e8b0104d8efdcc5c
+      internalID: 1239737251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "npc \uC784\uC2DC \uD2C0_9"
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 25
+        width: 130
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8458f1ef472becf43a9b6daf39f390d1
+      internalID: 88114256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "npc \uC784\uC2DC \uD2C0_10"
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 25
+        width: 130
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea44f9a738b38f340b11bbcc63f782b9
+      internalID: -1864608421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "npc \uC784\uC2DC \uD2C0_11"
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 25
+        width: 130
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62dedb4ba3cba1f4b99d9d5176f8dcb7
+      internalID: -1669758412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +371,19 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "npc \uC784\uC2DC \uD2C0_0": 1416303880
+      "npc \uC784\uC2DC \uD2C0_1": -1414197430
+      "npc \uC784\uC2DC \uD2C0_10": -1864608421
+      "npc \uC784\uC2DC \uD2C0_11": -1669758412
+      "npc \uC784\uC2DC \uD2C0_2": -614467318
+      "npc \uC784\uC2DC \uD2C0_3": -1212993614
+      "npc \uC784\uC2DC \uD2C0_4": 813717321
+      "npc \uC784\uC2DC \uD2C0_5": 1176522152
+      "npc \uC784\uC2DC \uD2C0_6": 341045475
+      "npc \uC784\uC2DC \uD2C0_7": 1577627403
+      "npc \uC784\uC2DC \uD2C0_8": 1239737251
+      "npc \uC784\uC2DC \uD2C0_9": 88114256
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
