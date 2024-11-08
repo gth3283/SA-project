@@ -29,11 +29,13 @@ public class TalkManager : MonoBehaviour
     private List<string> Names;
     private List<string> Sentences;
     private List<Sprite> sprites;
+    private List<Sprite> NPCs;
     private List<Sprite> windows;
 
     private int count;
 
     public Animator animSprite;
+    public Animator animNPC;
     public Animator animWindow;
 
     public bool talking = false;
@@ -61,7 +63,6 @@ public class TalkManager : MonoBehaviour
             sprites.Add(t.sprites[i]);
             windows.Add(t.windows[i]);
         }
-        animSprite.SetBool("Appear", true);
         animWindow.SetBool("Appear", true);
         StartCoroutine(TalkingCoroutine());
     }
@@ -76,6 +77,7 @@ public class TalkManager : MonoBehaviour
         sprites.Clear();
         windows.Clear();
         animSprite.SetBool("Appear", false);
+        animNPC.SetBool("Appear", false);
         animWindow.SetBool("Appear", false);
         talking = false;
     }
@@ -83,6 +85,14 @@ public class TalkManager : MonoBehaviour
     IEnumerator TalkingCoroutine()
     {
         Name.text += Names[count];
+        if (Name.text == "»êµ¿¾Æ")
+        {
+            animSprite.SetBool("Appear", true);
+        }
+        else
+        {
+            animNPC.SetBool("Appear", true);
+        }
         if (count > 0)
         {
             if (windows[count] != windows[count - 1])
