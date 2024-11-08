@@ -16,7 +16,7 @@ public class TestTalk : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Player")
+        if (Input.GetKey(KeyCode.Z))
         {
             m.ShowTalk(t);
         }

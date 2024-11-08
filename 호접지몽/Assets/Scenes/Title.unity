@@ -493,6 +493,7 @@ MonoBehaviour:
   a: {fileID: 1336457141}
   b: {fileID: 673707861}
   title: {fileID: 1140556748}
+  titleName: {fileID: 1606367345}
 --- !u!114 &200577930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,6 +509,7 @@ MonoBehaviour:
   a: {fileID: 1336457141}
   b: {fileID: 673707861}
   title: {fileID: 1140556748}
+  titleName: {fileID: 1606367345}
 --- !u!1 &318228050
 GameObject:
   m_ObjectHideFlags: 0
@@ -2150,7 +2152,7 @@ GameObject:
   - component: {fileID: 1606367344}
   - component: {fileID: 1606367345}
   m_Layer: 0
-  m_Name: "\uC81C\uBAA9(\uD14C\uB450\uB9AC)"
+  m_Name: TitleName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2211,7 +2213,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -5
   m_Sprite: {fileID: 21300000, guid: 8c21db2147aacab4b919697b4f2bc121, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

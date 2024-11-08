@@ -9,6 +9,7 @@ public class OpenOptionWindow : MonoBehaviour
     public CanvasGroup a;
     public CanvasGroup b;
     public SpriteRenderer title;
+    public SpriteRenderer titleName;
 
     public void OnOptionButtonClick()
     {
@@ -17,5 +18,6 @@ public class OpenOptionWindow : MonoBehaviour
         b.alpha = 1;
         b.interactable = true;
         title.color = new Color(30 / 255f, 30 / 255f, 30 / 255f);
+        titleName.color = new Color(30 / 255f, 30 / 255f, 30 / 255f);
     }
 }

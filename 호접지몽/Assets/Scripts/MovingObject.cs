@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro.Examples;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class MovingObject : MonoBehaviour
 {
@@ -27,7 +29,7 @@ public class MovingObject : MonoBehaviour
 
     private Animator ani;
 
-    private NPCCollision NPCCollision;
+    //private NPCCollision NPCCollision;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +39,7 @@ public class MovingObject : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
             BoxCollider = GetComponent<BoxCollider2D>();
             ani = GetComponent<Animator>();
-            NPCCollision = GetComponent<NPCCollision>();
+            //NPCCollision = GetComponent<NPCCollision>();
             instance = this;
         }
         else if(instance != null)
@@ -49,7 +51,7 @@ public class MovingObject : MonoBehaviour
     {
         while (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
         {
-
+            
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 applyRun = Running;
@@ -73,48 +75,56 @@ public class MovingObject : MonoBehaviour
             ani.SetBool("Walking", true);
             Vector2 start = transform.position;
             Vector2 end = start + new Vector2(vector.x * speed * TileCount, vector.y * speed * TileCount);
-            Debug.Log("start"+start);
-            Debug.Log("end"+end);
+            //Debug.Log("start"+start);
+            //Debug.Log("end"+end);
 
             BoxCollider.enabled = false;
-            RaycastHit2D hit = Physics2D.Raycast(start, end, LayerMask);
-            RaycastHit2D NPC_hit = Physics2D.Raycast(start, end);
+            RaycastHit2D hit = Physics2D.Raycast(start, vector, TileCount*speed, LayerMask); // start, direction, distance, layermask
+            //RaycastHit2D NPC_hit = Physics2D.Raycast(start, end);
             BoxCollider.enabled = true;
-            Debug.DrawRay(start, new Vector2(vector.x * speed * TileCount, vector.y * speed * TileCount));
-
-            if (hit)
+            /*if(hit.transform.gameObject != null)
             {
-                Debug.Log("hit");
+                Debug.Log(hit.transform.gameObject.name);
+            }*/
+            //if (!hit)
+            //{
+            //    Debug.Log("hit");
+
+            if (hit.transform != null)
+            {
+                ani.SetBool("Walking", false);
+                Move = true;
                 break;
             }
 
-            BoxCollider.offset = new Vector2(vector.x * 0.02f * speed * TileCount, vector.y * 0.02f * speed * TileCount);
+            //BoxCollider.offset = new Vector2(vector.x * 0.02f * speed * TileCount, vector.y * 0.02f * speed * TileCount);
+            CountBreaker = 0;
+                while (CountBreaker < TileCount)
+                {
+                    if (vector.x != 0)
+                    {
+                        transform.Translate(vector.x * (speed + applyRun), 0, 0);
+                    }
+                    else if (vector.y != 0)
+                    {
+                        transform.Translate(0, vector.y * (speed + applyRun), 0);
+                    }
 
-            while (CountBreaker < TileCount)
-            {
-                if (vector.x != 0)
-                {
-                    transform.Translate(vector.x * (speed + applyRun), 0, 0);
-                }
-                else if (vector.y != 0)
-                {
-                    transform.Translate(0, vector.y * (speed + applyRun), 0);
-                }
+                    if (runFlag)
+                    {
+                        CountBreaker++;
+                    }
 
-                if (runFlag)
-                {
                     CountBreaker++;
+                    //if (CountBreaker == 12)
+                    //    BoxCollider.offset = Vector2.zero;
+                    yield return new WaitForSeconds(0.01f);
                 }
-
-                CountBreaker++;
-                if(CountBreaker == 12)
-                    BoxCollider.offset = Vector2.zero;
-                yield return new WaitForSeconds(0.01f);
             }
 
             CountBreaker = 0;
-           
-        }
+
+        //}
         ani.SetBool("Walking", false);
         Move = true;
     }
