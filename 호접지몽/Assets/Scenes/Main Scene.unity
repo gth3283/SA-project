@@ -3824,7 +3824,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   baseSpeed: 2.5
-  Move: 1
   npcMoveData:
     NPCmove: 1
     direction:
