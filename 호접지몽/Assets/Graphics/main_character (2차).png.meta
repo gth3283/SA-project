@@ -116,7 +116,7 @@ TextureImporter:
         x: 0
         y: 968
         width: 240
-        height: 322
+        height: 300
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,7 +137,7 @@ TextureImporter:
         x: 240
         y: 968
         width: 240
-        height: 322
+        height: 300
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,9 +156,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 480
-        y: 967.5
+        y: 968
         width: 240
-        height: 322.5
+        height: 300
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,7 +179,7 @@ TextureImporter:
         x: 0
         y: 655
         width: 240
-        height: 322
+        height: 300
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,7 +200,7 @@ TextureImporter:
         x: 240
         y: 655
         width: 240
-        height: 322
+        height: 300
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,7 +221,7 @@ TextureImporter:
         x: 480
         y: 655
         width: 240
-        height: 322
+        height: 300
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,10 +239,10 @@ TextureImporter:
       name: "main_character (2\uCC28)_6"
       rect:
         serializedVersion: 2
-        x: 4
+        x: 0
         y: 345
         width: 240
-        height: 322
+        height: 300
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,10 +260,10 @@ TextureImporter:
       name: "main_character (2\uCC28)_7"
       rect:
         serializedVersion: 2
-        x: 239
+        x: 240
         y: 345
         width: 240
-        height: 322
+        height: 300
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,7 +284,7 @@ TextureImporter:
         x: 480
         y: 345
         width: 240
-        height: 322
+        height: 300
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -303,9 +303,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 40
+        y: 35
         width: 240
-        height: 322
+        height: 300
       alignment: 9
       pivot: {x: 0.49999988, y: 0.5638831}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -323,10 +323,10 @@ TextureImporter:
       name: "main_character (2\uCC28)_10"
       rect:
         serializedVersion: 2
-        x: 242
+        x: 240
         y: 40
         width: 240
-        height: 322
+        height: 300
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -347,7 +347,7 @@ TextureImporter:
         x: 480
         y: 40
         width: 240
-        height: 322
+        height: 300
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -357,6 +357,27 @@ TextureImporter:
       bones: []
       spriteID: 2d04f7b8241bea345b3f16eacfaa0fd3
       internalID: 2003825445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "main_character (2\uCC28)_12"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 46
+        width: 720
+        height: 1244
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df4d1a4641b0a08479708a4889d0cde7
+      internalID: 1775736702
       vertices: []
       indices: 
       edges: []
@@ -376,6 +397,7 @@ TextureImporter:
       "main_character (2\uCC28)_1": -946793552
       "main_character (2\uCC28)_10": 2143853814
       "main_character (2\uCC28)_11": 2003825445
+      "main_character (2\uCC28)_12": 1775736702
       "main_character (2\uCC28)_2": 340594990
       "main_character (2\uCC28)_3": -508425441
       "main_character (2\uCC28)_4": -2087812399
