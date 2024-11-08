@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class Inventory : MonoBehaviour
 {
     public List<Item> items;
@@ -39,6 +38,19 @@ public class Inventory : MonoBehaviour
         {
             items.Add(_item);
             FreshSlot();
+        }
+    }
+
+    public void RemoveItem(Item _item)
+    {
+        if(items.Count > 0)
+        {
+            int findItem = items.FindIndex(item => item.itemName.Equals(_item.itemName));
+            if (findItem != -1)
+            {
+                items.RemoveAt(findItem);
+                FreshSlot();
+            }
         }
     }
 }

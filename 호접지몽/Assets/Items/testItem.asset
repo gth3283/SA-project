@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 316bd3e49aa37504fb13129028643b62, type: 3}
   m_Name: testItem
   m_EditorClassIdentifier: 
-  itemName: 
-  itemImage: {fileID: 0}
-  itemCount: 0
+  itemName: testItem
+  itemImage: {fileID: 21300020, guid: 31e24ed712cbf3b4595a8dbc9b18aa9c, type: 3}
