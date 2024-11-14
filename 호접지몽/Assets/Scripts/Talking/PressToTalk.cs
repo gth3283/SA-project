@@ -9,25 +9,34 @@ public class TestTalk : MonoBehaviour
     public Talk t;
     private TalkManager m;
     private MovingObject p;
+    private bool talking;
 
     // Start is called before the first frame update
     void Start()
     {
         m = FindObjectOfType<TalkManager>();
         p = FindObjectOfType<MovingObject>();
+        talking = false;
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (Input.GetKeyDown(KeyCode.Z)) { 
-            m.ShowTalk(t);
+        if (!talking)
+        {
+            if (Input.GetKey(KeyCode.Z))
+            {
+                talking = true;
+                m.ShowTalk(t);
+            }
         }
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (!m.a)
+        {
+            talking = false;
+        }
     }
 }

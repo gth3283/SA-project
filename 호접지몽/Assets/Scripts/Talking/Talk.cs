@@ -5,9 +5,10 @@ using UnityEngine;
 [System.Serializable]
 public class Talk
 {
-    [TextArea(1,2)]
+    [TextArea(1,3)]
     public string[] sentences;
+
     public string[] name;
-    public Sprite[] sprites;
-    public Sprite[] windows;
+    //public Sprite[] sprites;
+   // public Sprite[] windows;
 }

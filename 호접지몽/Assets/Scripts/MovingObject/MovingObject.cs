@@ -25,15 +25,15 @@ public class MovingObject : MonoBehaviour
     public int TileCount;//타일당 이동 구현 ex)player의 speed가 2.5이고 타일의 크기가 50픽셀/2.5 = 20
     private int CountBreaker;
 
-    private bool Move = true;
+    private bool Move;
 
     private Animator ani;
-
     //private NPCCollision NPCCollision;
 
     // Start is called before the first frame update
     void Start()
     {
+        Move = true;
         if(instance == null)
         {
             DontDestroyOnLoad(this.gameObject);
@@ -47,6 +47,17 @@ public class MovingObject : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    public void CanMove()
+    {
+        Move = true;
+    }
+
+    public void StopMove()
+    {
+        Move = false;
+    }
+
     IEnumerator MoveCoroutine()
     {
         while (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
