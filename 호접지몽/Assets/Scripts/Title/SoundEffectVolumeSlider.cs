@@ -10,6 +10,8 @@ public class SoundEffectVolumeSlider: MonoBehaviour
 
     void Start()
     {
+        soundEffect = FindObjectOfType<AudioManager>();
+        Debug.Log(soundEffect.GetVolume());
         volumeSlider.interactable = true; // 슬라이더 활성화
         // 슬라이더 값 초기 설정
         volumeSlider.minValue = 0f;

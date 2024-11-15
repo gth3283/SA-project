@@ -137,7 +137,6 @@ public class MovingObject : MonoBehaviour
                 if (CountBreaker == 10)
                 { 
                     int temp = Random.Range(1,4);
-                    Debug.Log(temp);
                     switch(temp)
                     {
                         case 1:

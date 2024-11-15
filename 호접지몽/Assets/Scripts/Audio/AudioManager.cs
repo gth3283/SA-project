@@ -9,7 +9,7 @@ public class Sound
     public AudioClip clip;
     private AudioSource source;
     public bool loop;
-    public float volume;
+    public static float volume;
     public void SetSource(AudioSource s)
     {
         source = s;
@@ -21,6 +21,11 @@ public class Sound
     {
         volume = Volumn;
         source.volume = Volumn;
+    }
+
+    public float GetVolume()
+    {
+        return volume;
     }
 
     public void Play()
@@ -69,7 +74,7 @@ public class AudioManager : MonoBehaviour
 
     public float GetVolume()
     {
-        return sounds[0].volume;
+        return sounds[0].GetVolume();
     }
 
     public void Play(string name)

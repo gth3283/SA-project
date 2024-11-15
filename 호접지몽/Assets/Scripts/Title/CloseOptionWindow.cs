@@ -8,9 +8,15 @@ public class CloseOptionWindow : MonoBehaviour
     public CanvasGroup b;
     public SpriteRenderer title;
     public SpriteRenderer titleName;
+    private AudioManager ad;
 
+    private void Start()
+    {
+        ad = FindObjectOfType<AudioManager>();
+    }
     public void OnCloseButtonClick()
     {
+        ad.Play("Press");
         a.alpha = 1;
         a.interactable = true;
         b.alpha = 0;

@@ -10,9 +10,16 @@ public class OpenOptionWindow : MonoBehaviour
     public CanvasGroup b;
     public SpriteRenderer title;
     public SpriteRenderer titleName;
+    private AudioManager audioManager;
+
+    private void Start()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
 
     public void OnOptionButtonClick()
     {
+        audioManager.Play("Press");
         a.alpha = 0;
         a.interactable = false;
         b.alpha = 1;

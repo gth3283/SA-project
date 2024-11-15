@@ -8,11 +8,13 @@ using static Unity.Collections.AllocatorManager;
 
 public class SceneChange : MonoBehaviour
 {
+    private AudioManager a;
     private FadeManager Fade;
     public GameObject Loading;
     public CanvasGroup c;
     public Text LoadingText;
     private Color color;
+    public GameObject g;
 
     public static SceneChange Instance
     {
@@ -24,12 +26,15 @@ public class SceneChange : MonoBehaviour
     {
         instance = this;
         Fade = FindObjectOfType<FadeManager>();
+        a = FindObjectOfType<AudioManager>();
     }
     public void ChangeScene(string sceneName) //씬 전환
     {
+        a.Play("Press");
         c.alpha = 0f;
         StartCoroutine(FICoroutine());
         StartCoroutine(LoadScene(sceneName)); //로딩 시작
+        DontDestroyOnLoad(g);
     }
 
     IEnumerator FICoroutine()
