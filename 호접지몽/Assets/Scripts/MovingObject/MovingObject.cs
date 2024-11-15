@@ -25,6 +25,8 @@ public class MovingObject : MonoBehaviour
     public int TileCount;//타일당 이동 구현 ex)player의 speed가 2.5이고 타일의 크기가 50픽셀/2.5 = 20
     private int CountBreaker;
 
+    private AudioManager audioManager;
+
     private bool Move;
 
     private Animator ani;
@@ -39,6 +41,7 @@ public class MovingObject : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
             BoxCollider = GetComponent<BoxCollider2D>();
             ani = GetComponent<Animator>();
+            audioManager = FindObjectOfType<AudioManager>();
             //NPCCollision = GetComponent<NPCCollision>();
             instance = this;
         }
@@ -129,8 +132,47 @@ public class MovingObject : MonoBehaviour
                     CountBreaker++;
                     //if (CountBreaker == 12)
                     //    BoxCollider.offset = Vector2.zero;
-                    yield return new WaitForSeconds(0.01f);
+                    yield return new WaitForSeconds(0.02f);
+
+                if (CountBreaker == 10)
+                { 
+                    int temp = Random.Range(1,4);
+                    Debug.Log(temp);
+                    switch(temp)
+                    {
+                        case 1:
+                            if (runFlag)
+                            {
+                                audioManager.Play("Run1");
+                            }
+                            else
+                            {
+                                audioManager.Play("Walk1");
+                            }
+                            break;
+                        case 2:
+                            if (runFlag)
+                            {
+                                audioManager.Play("Run2");
+                            }
+                            else
+                            {
+                                audioManager.Play("Walk2");
+                            }
+                            break;
+                        case 3:
+                            if (runFlag)
+                            {
+                                audioManager.Play("Run3");
+                            }
+                            else
+                            {
+                                audioManager.Play("Walk3");
+                            }
+                            break;
+                    }
                 }
+            }
             }
 
             CountBreaker = 0;

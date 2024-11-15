@@ -44,6 +44,8 @@ public class TalkManager : MonoBehaviour
     bool talking;
     public bool a=false;
 
+    private AudioManager audioManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +54,7 @@ public class TalkManager : MonoBehaviour
         Name.text = "";
         Sentences = new List<string>();
         Names = new List<string>();
+        audioManager = FindObjectOfType<AudioManager>();
         //sprites = new List<Sprite>();
         //windows = new List<Sprite>();
         talking = false;
@@ -75,6 +78,8 @@ public class TalkManager : MonoBehaviour
         }
         animWindow.SetBool("Appear", true);
         StartCoroutine(TalkingCoroutine());
+
+        
     }
 
     public void ExitTalk()
@@ -101,10 +106,10 @@ public class TalkManager : MonoBehaviour
 
         if (Name.text == "산동아")
         {
-            Debug.Log("1");
+            Debug.Log("산동아 대화");
             animSprite.SetBool("Change", false);
             animSprite.SetBool("Appear", true);
-            animNPC.SetBool("Appear", false);
+            animNPC.SetBool("Change", true);
         }
         else if(Name.text=="촌장")
         {
@@ -153,6 +158,7 @@ public class TalkManager : MonoBehaviour
         for(int i = 0; i < Sentences[count].Length; i++)
         {
             text.text += Sentences[count][i];
+            //audioManager.Play("Talking");
             yield return new WaitForSeconds(0.05f);
         }
         a = false;
@@ -164,8 +170,9 @@ public class TalkManager : MonoBehaviour
         if (talking)
         {
             p.StopMove();
-            if (Input.GetKeyDown(KeyCode.C)&&!a)
+            if (Input.GetKeyDown(KeyCode.C) && !a)
             {
+                audioManager.Play("Press");
                 count++;
                 text.text = "";
                 Name.text = "";
@@ -177,6 +184,7 @@ public class TalkManager : MonoBehaviour
                 }
                 else// if (count !=1)
                 {
+                    StopAllCoroutines();
                     StartCoroutine(TalkingCoroutine());
                 }
             }
