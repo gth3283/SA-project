@@ -23,7 +23,7 @@ public class Inventory : MonoBehaviour
         FreshSlot();
     }
 
-    public void FreshSlot()
+    public void FreshSlot() //아이템 슬롯 정리
     {
         int i = 0;
         for(; i < items.Count && i < slots.Length; i++)
@@ -41,15 +41,16 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void RemoveItem(Item _item)
+    public void UseItem(int itemID)
     {
         if(items.Count > 0)
         {
-            int findItem = items.FindIndex(item => item.itemName.Equals(_item.itemName));
+            int findItem = items.FindIndex(item => item.itemID.Equals(itemID)); //일치하는 값을 찾으면 인덱스 리턴, 없으면 -1
             if (findItem != -1)
             {
                 items.RemoveAt(findItem);
                 FreshSlot();
+                return;
             }
         }
     }
