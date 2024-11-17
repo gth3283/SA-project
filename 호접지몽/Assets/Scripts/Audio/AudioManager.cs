@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +10,8 @@ public class Sound
     private AudioSource source;
     public bool loop;
     public static float volume;
+
+
     public void SetSource(AudioSource s)
     {
         source = s;
@@ -56,7 +58,12 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for(int i=0;i<sounds.Length; i++)
+        //볼륨값 세이브했다가 게임꺼도 저장되게 하는 파트.
+        float savedVolume = PlayerPrefs.GetFloat("SoundVolume", 1.0f); // 기본값 1.0
+        Sound.volume = savedVolume;
+        //여기까지 (현재 유니티엔진에서 게임 켜고끌때는 적용안되는듯함)
+
+        for (int i=0;i<sounds.Length; i++)
         {
             GameObject SoundObject = new GameObject(sounds[i].name);
             sounds[i].SetSource(SoundObject.AddComponent<AudioSource>());
