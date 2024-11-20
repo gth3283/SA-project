@@ -41,7 +41,7 @@ public class TalkManager : MonoBehaviour
 
     private MovingObject p;
 
-    bool talking;
+    public bool talking;
     public bool a=false;
 
     private AudioManager audioManager;

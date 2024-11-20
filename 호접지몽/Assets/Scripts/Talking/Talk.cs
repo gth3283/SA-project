@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Talk
 {
-    [TextArea(1,3)]
+    [TextArea(1,5)]
     public string[] sentences;
 
     public string[] name;

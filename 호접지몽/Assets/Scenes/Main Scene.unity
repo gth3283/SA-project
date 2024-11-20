@@ -544,8 +544,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 600, y: -200}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 930.5799, y: -222.29492}
+  m_SizeDelta: {x: 490.5799, y: 52.2949}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &282857294
 MonoBehaviour:
@@ -1177,7 +1177,7 @@ MonoBehaviour:
   animSprite: {fileID: 166981796}
   animNPC: {fileID: 406612184}
   animWindow: {fileID: 993456939}
-  talking: 0
+  a: 0
 --- !u!1 &696165988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1874,16 +1874,6 @@ MonoBehaviour:
     - "\uC0B0\uB3D9\uC544"
     - "\uC0B0\uB3D9\uC544"
     - "\uCD0C\uC7A5"
-    sprites:
-    - {fileID: 21300000, guid: fc0881495e14f554ea975c8652dccc33, type: 3}
-    - {fileID: 21300000, guid: fc0881495e14f554ea975c8652dccc33, type: 3}
-    - {fileID: 21300000, guid: fc0881495e14f554ea975c8652dccc33, type: 3}
-    - {fileID: 21300000, guid: 1178c9824490c254881a93646569c3de, type: 3}
-    windows:
-    - {fileID: 21300000, guid: 23649417530a7bf498bcc0663d7674db, type: 3}
-    - {fileID: 21300000, guid: 23649417530a7bf498bcc0663d7674db, type: 3}
-    - {fileID: 21300000, guid: 23649417530a7bf498bcc0663d7674db, type: 3}
-    - {fileID: 21300000, guid: 23649417530a7bf498bcc0663d7674db, type: 3}
 --- !u!61 &1113725527
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -32023,6 +32013,7 @@ GameObject:
   - component: {fileID: 2103991047}
   - component: {fileID: 2103991048}
   - component: {fileID: 2103991049}
+  - component: {fileID: 2103991050}
   m_Layer: 0
   m_Name: For Fade
   m_TagString: Untagged
@@ -32074,6 +32065,36 @@ MonoBehaviour:
   Loading: {fileID: 0}
   c: {fileID: 0}
   LoadingText: {fileID: 0}
+  g: {fileID: 0}
+--- !u!114 &2103991050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103991045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaf81bad29112724e9f30493a18d4e15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t:
+    sentences:
+    - "\uAFC8 \uC18D\uC5D0\uC11C \uB098\uBE44\uAC00 \uCDA4\uCD94\uB294 \uBAA8\uC2B5\uC744
+      \uBCF4\uC558\uB2E4."
+    - "\uADF8 \uB098\uBE44\uB294 \uB098\uC600\uB2E4."
+    - "\uC544\uB2C8, \uB098\uBE44\uAC00 \uB41C \uAFC8\uC744 \uAFB8\uB294 \uAC83\uC774\uB2E4."
+    - "\uC544\uB2CC\uAC00?"
+    - "\uB0B4\uAC00 \uC2E4\uC740 \uB098\uBE44\uC778\uB370, \uC778\uAC04\uC778 \uB098\uC758
+      \uAFC8\uC744 \uAFB8\uB294 \uAC83\uC778\uAC00?"
+    - "\uC5B4\uB290 \uAC83\uC774 \uC0AC\uC2E4\uC778\uC9C0 \uB098\uB294 \uBAA8\uB978\uB2E4."
+    name:
+    - ???
+    - ???
+    - ???
+    - ???
+    - ???
+    - ???
 --- !u!1001 &174830459100009394
 PrefabInstance:
   m_ObjectHideFlags: 0

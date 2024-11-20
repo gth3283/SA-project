@@ -48,32 +48,30 @@ MonoBehaviour:
   - name: Walk1
     clip: {fileID: 8300000, guid: c8a70ba7587aebd46a56ebb8006262f1, type: 3}
     loop: 0
-    volume: 0
   - name: Walk2
     clip: {fileID: 8300000, guid: 8434b482ddca5934d813b9de555ff4ab, type: 3}
     loop: 0
-    volume: 0
   - name: Run1
     clip: {fileID: 8300000, guid: 8ae3cc4609aef2745bc4778e5d9bf024, type: 3}
     loop: 0
-    volume: 0
   - name: Run2
     clip: {fileID: 8300000, guid: 6d8cbeae1cc5dcb40bd1064681211059, type: 3}
     loop: 0
-    volume: 0
   - name: Run3
     clip: {fileID: 8300000, guid: 80dc5f2116a9e924daa171dd5fc9a66c, type: 3}
     loop: 0
-    volume: 0
   - name: Walk3
     clip: {fileID: 8300000, guid: 7f3ebf527276b484e8edae7846d33119, type: 3}
     loop: 0
-    volume: 0
   - name: Press
-    clip: {fileID: 8300000, guid: 50458ff10ef64a44da654bf40c760be7, type: 3}
+    clip: {fileID: 8300000, guid: 0f20f7d6be879af42964bc214b2245fc, type: 3}
     loop: 0
-    volume: 0
   - name: Talking
-    clip: {fileID: 8300000, guid: fd2e66a7c7ff5be4a9a539ef60554ca0, type: 3}
+    clip: {fileID: 8300000, guid: 3bec81f37b9ada445b39d239a655a58e, type: 3}
     loop: 0
-    volume: 0
+  - name: Door
+    clip: {fileID: 8300000, guid: 6d19b6d6173aa104390ceacb81cddb1b, type: 3}
+    loop: 0
+  - name: Book
+    clip: {fileID: 8300000, guid: 90d297cb694f2eb488d388b10ba11bcd, type: 3}
+    loop: 0
