@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Inventory : MonoBehaviour
 {
@@ -34,9 +35,10 @@ public class Inventory : MonoBehaviour
 
     public void AddItem(Item _item)
     {
-        if(items.Count < slots.Length)
+        if (items.Count < slots.Length)
         {
             items.Add(_item);
+            Debug.Log(_item.itemName + " added to inventory.");  // 아이템이 추가될 때 로그 출력
             FreshSlot();
         }
     }
@@ -53,5 +55,10 @@ public class Inventory : MonoBehaviour
                 return;
             }
         }
+    }
+
+    public bool HasItem(int itemID)
+    {
+        return items.Any(item => item.itemID == itemID);  
     }
 }

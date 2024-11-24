@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    GameObject Inventory;
+    public GameObject Inventory;
 
     // Start is called before the first frame update
     void Start()
