@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ParkHouse.unity
     guid: c20030aaf15a1ae438531f8f44628b47
+  - enabled: 1
+    path: Assets/Scenes/Kim_s House.unity
+    guid: a4c95ba0807f965489f3e5d210e7e9e4
   m_configObjects: {}
