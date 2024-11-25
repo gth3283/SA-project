@@ -15,4 +15,4 @@ MonoBehaviour:
   itemID: 3
   itemName: "\uAD6C\uC2AC"
   itemDescription: "\uBC18\uC9DD\uBC18\uC9DD \uBE5B\uB09C\uB2E4."
-  itemImage: {fileID: 21300022, guid: 31e24ed712cbf3b4595a8dbc9b18aa9c, type: 3}
+  itemImage: {fileID: 21300000, guid: 6038fbc55f7196e4c8d100509250921c, type: 3}
