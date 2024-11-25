@@ -10,6 +10,7 @@ public class InGameStart : MonoBehaviour
     private TalkManager m;
     private FadeManager fadeManager;
     bool one = true;
+    public CanvasGroup g;
 
     // Start is called before the first frame update
     void Start()
@@ -20,15 +21,14 @@ public class InGameStart : MonoBehaviour
         fadeManager.FadeOut(1);
         m.ShowTalk(t);
     }
-
-    // Update is called once per frame
-    private void Update()
+     private void Update()
     {
         if (one)
         {
             if (!m.talking)
             {
                 //coroutine > chapter 1;
+                g.alpha = 0;
                 fadeManager.FadeIn();
                 one = false;
             }

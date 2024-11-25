@@ -21,6 +21,7 @@ public class MovingObject : MonoBehaviour
     public float Running;
     private float applyRun;
     private bool runFlag = false;
+    public bool inside = false;
 
     public int TileCount;//타일당 이동 구현 ex)player의 speed가 2.5이고 타일의 크기가 50픽셀/2.5 = 20
     private int CountBreaker;
@@ -142,30 +143,50 @@ public class MovingObject : MonoBehaviour
                         case 1:
                             if (runFlag)
                             {
+                                if (inside)
+                                {
+                                    audioManager.Play("TileRun1");
+                                }
+                                else 
                                 audioManager.Play("Run1");
                             }
                             else
                             {
+                                if (inside)
+                                    audioManager.Play("TileWalk1");
+                                else
                                 audioManager.Play("Walk1");
                             }
                             break;
                         case 2:
                             if (runFlag)
                             {
+                                if (inside)
+                                    audioManager.Play("TileRun2");
+                                else
                                 audioManager.Play("Run2");
                             }
                             else
                             {
+                                if (inside)
+                                    audioManager.Play("TileWalk2");
+                                else
                                 audioManager.Play("Walk2");
                             }
                             break;
                         case 3:
                             if (runFlag)
                             {
+                                if (inside)
+                                    audioManager.Play("TileRun3");
+                                else
                                 audioManager.Play("Run3");
                             }
                             else
                             {
+                                if (inside)
+                                    audioManager.Play("TileWalk3");
+                                else
                                 audioManager.Play("Walk3");
                             }
                             break;

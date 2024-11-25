@@ -7,34 +7,37 @@ public class SceneTransition : MonoBehaviour
     public string targetSceneName;
     private FadeManager Fade;
 
-    // Start is called before the first frame update
+    private GameObject player;
+    private GameObject audioManager;
+
     void Awake()
     {
         Fade = FindObjectOfType<FadeManager>();
         Fade.FadeIn(0.001f);
+
+        audioManager = GameObject.Find("AudioManager");
+
+        DontDestroyOnLoad(audioManager);
     }
 
-    
     private void OnTriggerStay2D(Collider2D collision)
     {
-        
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            StartCoroutine(FadeCoroutine()); 
+            StartCoroutine(FadeCoroutine());
         }
     }
 
-    
     IEnumerator FadeCoroutine()
     {
         Debug.Log("æ¿ ¿Ãµø.");
-        Fade.FadeOut(); 
+        Fade.FadeOut();
         yield return new WaitForSeconds(1f);
-        
-        SceneManager.LoadScene(targetSceneName);  
 
-        yield return new WaitForSeconds(1f);  
+        SceneManager.LoadScene(targetSceneName);
 
-        Fade.FadeIn(0.001f);  
+        yield return new WaitForSeconds(1f);
+
+        Fade.FadeIn(0.001f);
     }
 }

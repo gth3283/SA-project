@@ -24,6 +24,7 @@ public class MoveMap : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
+            player.inside = false;
             StartCoroutine(FadeCoroutine());
         }
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class Slot : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
+public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] Image image;
 
@@ -39,10 +39,6 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, I
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("Click Item");
-        if (_item != null)
-        {
-            inventory.UseItem(_item.itemID);
-        }
     }
 
     public void OnPointerEnter(PointerEventData eventData) {

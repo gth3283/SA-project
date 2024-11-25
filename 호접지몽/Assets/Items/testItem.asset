@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: testItem
   m_EditorClassIdentifier: 
   itemID: 1
-  itemName: Test Item
-  itemDescription: "\uD14C\uC2A4\uD2B8\uC6A9 \uC544\uC774\uD15C\uC785\uB2C8\uB2E4."
+  itemName: "\uC0AC\uB2F9 \uB098\uBB34"
+  itemDescription: .
   itemImage: {fileID: 21300020, guid: 31e24ed712cbf3b4595a8dbc9b18aa9c, type: 3}

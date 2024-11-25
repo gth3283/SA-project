@@ -8,7 +8,8 @@ public class ItemUseAndReward : MonoBehaviour
     private Inventory inventory;
 
     [SerializeField]
-    public Talk t;
+    public Talk t1;
+    public Talk t2;
     private TalkManager m;
     private AudioManager a;
 
@@ -29,11 +30,12 @@ public class ItemUseAndReward : MonoBehaviour
                 inventory.AddItem(rewardItem);
 
                 a.Play("Press");
-                m.ShowTalk(t);
+                m.ShowTalk(t1);
                 Destroy(this.gameObject);
             }
             else
             {
+                m.ShowTalk(t2);
                 Debug.Log("필요한 아이템이 없습니다! 아이템을 먼저 구하세요.");
             }
         }

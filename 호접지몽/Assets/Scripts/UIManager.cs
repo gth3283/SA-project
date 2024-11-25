@@ -6,6 +6,7 @@ public class UIManager : MonoBehaviour
 {
     public GameObject Inventory;
     private UIManager instance = null;
+    private MovingObject player;
 
     private void Awake()
     {
@@ -22,6 +23,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         Inventory = GameObject.Find("Inventory");
+        player = FindObjectOfType<MovingObject>();
         Inventory.SetActive(false);
     }
 
@@ -31,9 +33,15 @@ public class UIManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))
         {
             if (Inventory.activeSelf)
+            {
                 Inventory.SetActive(false);
+                player.CanMove();
+            }
             else
+            {
                 Inventory.SetActive(true);
+                player.StopMove();
+            }
         }
     }
 }

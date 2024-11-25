@@ -5,16 +5,27 @@ using UnityEngine;
 public class MainOption : MonoBehaviour
 {
     public CanvasGroup c;
-    public CanvasGroup c2;
     private AudioManager audioManager;
     public MovingObject player;
     private bool open;
+    private MainOption instance = null;
 
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+            Destroy(this.gameObject);
+    }
     // Start is called before the first frame update
     void Start()
     {
-        audioManager = FindObjectOfType<AudioManager>();
         open = true;
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     // Update is called once per frame
@@ -24,7 +35,6 @@ public class MainOption : MonoBehaviour
         {
             audioManager.Play("Press");
             c.alpha = 1;
-            c2.alpha = 1;
             c.interactable = true;
             open = false;
             player.StopMove();
@@ -33,7 +43,6 @@ public class MainOption : MonoBehaviour
         {
             audioManager.Play("Press");
             c.alpha = 0;
-            c2.alpha = 0;
             c.interactable = false;
             open = true;
             player.CanMove();
