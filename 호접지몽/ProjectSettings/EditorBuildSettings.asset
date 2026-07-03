@@ -8,22 +8,22 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Map 4.unity
     guid: c33b8654a3f3ce9438a6a3476da82b79
-  - enabled: 0
-    path: Assets/Scenes/ParkHouse.unity
-    guid: c20030aaf15a1ae438531f8f44628b47
-  - enabled: 0
-    path: Assets/Scenes/Kim.unity
-    guid: c41a52438f264f048a33d7a3169c4e56
-  - enabled: 0
-    path: Assets/Scenes/Park.unity
-    guid: c2c9afeb27c19aa4e83c910ca9ed8ae3
-  - enabled: 0
-    path: Assets/Scenes/Kim_s House.unity
-    guid: a4c95ba0807f965489f3e5d210e7e9e4
   - enabled: 1
     path: Assets/Scenes/Title.unity
     guid: c4361e2ec90cfda46b8213d7bbb4be8e
   - enabled: 1
     path: Assets/Scenes/Main Scene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: Assets/Scenes/ParkHouse.unity
+    guid: c20030aaf15a1ae438531f8f44628b47
+  - enabled: 1
+    path: Assets/Scenes/Kim.unity
+    guid: c41a52438f264f048a33d7a3169c4e56
+  - enabled: 1
+    path: Assets/Scenes/Park.unity
+    guid: c2c9afeb27c19aa4e83c910ca9ed8ae3
+  - enabled: 0
+    path: Assets/Scenes/Kim_s House.unity
+    guid: a4c95ba0807f965489f3e5d210e7e9e4
   m_configObjects: {}
